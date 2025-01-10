@@ -6,3 +6,25 @@ body{
     background-size: 100%;
     
 }
+
+.white-container{
+    background-color: rgba(255, 255, 255, 0.7); /* In rgba the A is for Alpha, which is the level of opacity */
+    padding: 10px;
+    border-radius: 20px 10px 10px 20px;
+}
+
+.footer-container{
+    background-color: rgb(122, 150, 135); /* In rgba the A is for Alpha, which is the level of opacity */
+    padding: 0.2 px;
+    color: rgb(11, 70, 43);
+}
+
+/* styling unvisited links */
+a:link {
+    color: rgb(8, 83, 69);
+}
+
+/* styling visited links*/
+a:visited {
+    color: rgb(146, 18, 110) ;
+}
