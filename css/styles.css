@@ -6,10 +6,21 @@ body{
     background-size: 100%;
     color: rgb(243, 84, 206)*/
     background: #2f5548;
-    background: linear-gradient(0deg, rgb(2, 7, 66) 0%, rgb(65, 2, 51) 100%);
+    background: linear-gradient(0deg, rgb(2, 86, 97) 0%, rgb(33, 2, 40) 100%);
     margin: 50px ;
     color: #fff;
+    height:100vh; /* gradient will fill the viewport */
+    background-size: cover;
     
+}
+
+body.resume{
+    background: #2f5548;
+    background: linear-gradient(0deg, rgb(2, 86, 97) 0%, rgb(33, 2, 40) 100%);
+    margin: 50px ;
+    color: #fff;
+    height:auto; /* auto works better than 100vh here */
+    background-size: cover;
 }
 
 .white-container{
