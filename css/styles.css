@@ -1,15 +1,15 @@
 /* CSS work in progress */
 body {
     position: relative;
-    background: linear-gradient(45deg, #1f3797, #041f8b, #051969, #000000);
+    background: linear-gradient(45deg, #000000, #051969, #000000);
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     color: #fff;
-    font-size: 2rem;
+    font-size: 16px;
     min-height: 100vh; /* Gradient will fill the viewport */
     background-size: 400% 400%;
-    animation: gradient-animation 30s ease infinite;
+    animation: gradient-animation 10s ease infinite;
     z-index: 0; /* Ensure body content is visible */
     overflow: auto;
 }
@@ -38,7 +38,7 @@ body {
     /*text-shadow: 2px 5px 3px #090c0e;*/
     font-size: 4rem; 
     text-align: center;
-    margin: 20px 0;
+    margin: 20px;
 
 /* Google Font Orbitron */
 /*<weight>: Use a value from 400 to 900 */
@@ -66,8 +66,19 @@ body {
     font-optical-sizing: auto;
     font-weight: 900;
     font-style: normal;
-    margin: 0;
-    line-height: 1; /* Fixes the spacing between lines*/
+    line-height: 0; /* Fixes the spacing between lines*/
+}
+
+h3 {
+    font-size: 4rem;
+    /*text-align: center;*/
+    /* Google Font Chathura */
+    font-family: "Chathura", serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    line-height: 0; /* Fixes the spacing between lines*/
+        
 }
 
 /* Google Font "Chathura" which inherits space between*/
@@ -76,7 +87,6 @@ p {
     font-family: "Chathura", serif;
     font-weight: 700;
     font-style: normal;
-    margin: 0;
     line-height: 0.7; /* Fixes the spacing between lines*/
 }
 
@@ -104,6 +114,11 @@ body a:visited {
     background-color: rgba(21, 38, 39, 0.30);
     padding: 10px;
     border-radius: 20px 10px 10px 20px;
+    margin: 20px;
+}
+
+.resume-section {
+    margin: 20px;
 }
 
 footer {
@@ -122,6 +137,7 @@ footer {
     width: 100%;
     position: relative;
     box-sizing: border-box;
+    
 }
 
 footer ul li {
@@ -135,3 +151,12 @@ footer ul li {
     justify-content: flex-end;
     align-items: flex-end;
 }
+
+.footer-icon {
+    font-size: 2em; /* Match the size of the text */
+    color: #60dbfdb5; /* Icon color */
+    vertical-align: middle; /* Align icons with text */
+}
+
+
+
