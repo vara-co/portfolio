@@ -1,0 +1,277 @@
+/* Project Portfolio CSS */
+
+/* IMPORTS */
+
+/* Font Imports */
+@import url('https://fonts.cdnfonts.com/css/lexipa');
+@import url('https://fonts.cdnfonts.com/css/nova-stamp');
+@import url('https://fonts.cdnfonts.com/css/pic0');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    /*position: relative;
+    min-height: 100vh;
+    
+    /* Grid pattern on top of background image */
+    /*background-color: #d2d2d2;
+    background-image: 
+        repeating-linear-gradient(
+            to right, transparent 0 100px,
+            #25283b22 100px 101px),
+        repeating-linear-gradient(
+            to bottom, transparent 0 100px,
+            #25283b22 100px 101px
+        );*/
+    /*background: linear-gradient(90deg,#070707,#08022c);*/
+    background-color: black;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /*background-image: url(/assets/colorful-2174045_1920.png);*/
+    background-color: ;
+    background-size: cover;
+    background-position: top left;
+    background-repeat: repeat;
+    z-index: -1;
+    pointer-events: none;
+    
+}
+
+.hero-background {
+    display: grid;
+    place-items: center; /* centers both vertically and horizontally */
+    height: 100vh;
+    background-image: url(/assets/night-4489561_1920.jpg);
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+
+.hero-background .author{
+    font-family: 'NOVA STAMP', sans-serif;
+    text-align: center;
+    max-width: 300px;
+    color: #ebe6e6;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+                                                
+}
+
+.hero-background .author{
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: flex-start; /* Aligns text to the left */
+    gap: 0.5rem;
+}
+
+.hero-background .author .card{
+    width: 410px; /* 254*/
+    height: 190px; /*190*/
+    background: black;
+    position: relative;
+    place-content: center;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+    /* This section is for the animated color block */
+    display: grid;
+    place-items: center; /* Controls the gradient square position */
+    background: #080808;
+    margin-top: 8rem;
+    margin-left: -3.5rem; /* -2 centers and -30 aligns left to where i wanted it originally */
+
+}
+
+.hero-background .author .card .card2{
+    width: 400px;
+    height: 180px; 
+    background: black;
+    position: relative;
+    display: grid;
+    place-content: center;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+
+}
+
+.hero-background .author .card .card2 h1{
+    z-index: 1;
+    color: white;
+    font-size: 3em;
+}
+
+.hero-background .author .card .card2 p{
+    z-index: 1;
+    color: white;
+    font-size: 2em;
+}
+
+.hero-background .author .card::before{
+    content:'';
+    position: absolute;
+    width: 100px;
+    background-image: linear-gradient(180deg, rgb(2, 56, 251), rgb(220, 220, 220));
+    height: 250%;
+    animation: rotBGimg 3s linear infinite;
+    transition: all 0.2s linear;
+}
+
+@keyframes rotBGimg{
+    from{
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.hero-background .author .card::after{
+    conent: "";
+    position: absolute;
+    background: black;
+    inset: 5px;
+    border-radius: 15px;
+}
+
+
+
+.main_title h1{
+    margin: 20px;
+    text-align: center;
+    font-family: 'pic0', sans-serif;
+    font-size: 5em;
+    line-height: 1em;
+    position: relative;
+    color: #f9f7fb;
+}
+
+.banner{
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.banner .slider{
+    position: absolute;
+    width: 200px;
+    height: 250px;
+    top: 10%;
+    left: calc(50% - 100px);
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    /* Animating the Item Slider */
+    animation: autoRun 30s linear infinite;
+    z-index: 2; /* To overlap my photo # has to be greater*/
+    
+}
+
+/* Animation of the Item Slider 
+rotateX() moves item for particular view, while
+rotateY() moves item in the 3D space */
+@keyframes autoRun{
+    from{
+        transform: perspective(1000px) rotateX(-12deg) rotateY(0deg);
+    }to{
+        transform: perspective(1000px) rotateX(-12deg) rotateY(360deg);
+    }
+}
+
+/* Note that the distance between the slider items
+has to be 360 deg/quantity of items = x degrees
+Therefore, if I have 5 items, 360/5 = 72 deg increments
+Your first item starts at 0 degrees. You increment each
+item by the x degrees calculated 
+Basically rotateY of item at position: 
+(position - 1) * (360 deg/quantity) */
+
+.banner .slider .item{
+    position: absolute;
+    inset: 0 0 0 0;
+    transform: 
+        /* This positions the items in the 3D circle on the Y axis. Position and Quantity are your variables used in the HTML within the style class */
+        rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+        translateZ(550px);
+
+}
+
+.banner .slider .item img{
+    width: 100%;
+    height: 100%;
+
+}
+
+.banner .content {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1400px, 100vw);
+    height: max-content;
+    padding-bottom: 100px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1; /* level in the z-index for overlapping */
+
+}
+
+/* Banner Headings */
+.banner .content h1{
+    font-family: 'Pic0', sans-serif;
+    font-size: 10em;
+    line-height: 1em;
+    position: relative;
+    color: #ebe6e6;
+}
+
+.banner .content h1::after{
+    position:absolute;
+    inset: 0 0 0 0;
+    conent: attr(data-content);
+    z-index: 3; /* This number is relevant to the z-index of the .model for overlapping. Must be+1 of the z-index from the .model*/
+
+}
+
+.banner .content h2{
+    font-size: 3em;
+}
+
+.banner .content .myphoto{
+    background-image: url(/assets/LMVS_Tranps2a.png);
+    width: 100%;
+    height: 75vh; /* 75 is right angle for optical effect*/
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-size: auto 130%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    z-index: 2;
+}
+
+.banner .content .project-details{
+    font-family: 'lexipa', sans-serif;
+    /*text-align: left;*/
+    max-width: 300px;
+    color: #ebe6e6;
+    margin-right: 160px;
+                                                
+}
