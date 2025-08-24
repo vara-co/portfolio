@@ -11,6 +11,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /*color: black;*/
 
 }
 
@@ -28,10 +29,10 @@ body {
             to bottom, transparent 0 100px,
             #25283b22 100px 101px
         );*/
-    /*background: linear-gradient(90deg,#070707,#08022c);*/
-    background-color: black;
+    background: linear-gradient(90deg,#30012e,#08022c);
+    /*background-color: #052a47;*/
 }
-
+/*
 body::before {
     content: '';
     position: fixed;
@@ -39,7 +40,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    /*background-image: url(/assets/colorful-2174045_1920.png);*/
+    /*background-image: url(/assets/colorful-2174045_1920.png);
     background-color: ;
     background-size: cover;
     background-position: top left;
@@ -47,23 +48,25 @@ body::before {
     z-index: -1;
     pointer-events: none;
     
-}
+}*/
 
 .hero-background {
     display: grid;
     place-items: center; /* centers both vertically and horizontally */
-    height: 100vh;
-    background-image: url(/assets/night-4489561_1920.jpg);
+    /*height: 100vh;*/
+    /*background-image: url(/assets/night-4489561_1920.jpg);*/
+    background-color: black;
     background-size: cover;
     background-position: center;
-    min-height: 100vh;
+    /*min-height: 100vh; <-- Space below paragraph*/ 
+    /*margin-bottom: 10px; /* margin space between scrolling skills and this section */
 }
 
 .hero-background .author{
     font-family: 'NOVA STAMP', sans-serif;
     text-align: center;
     max-width: 300px;
-    color: #ebe6e6;
+    color: #f4effa;; /* color inside hero card */
     display: grid;
     place-items: center;
     width: 100%;
@@ -77,11 +80,10 @@ body::before {
     align-items: flex-start; /* Aligns text to the left */
     gap: 0.5rem;
 }
-
+/* Outer Hero Card where lights move */
 .hero-background .author .card{
     width: 410px; /* 254*/
     height: 190px; /*190*/
-    background: black;
     position: relative;
     place-content: center;
     place-items: center;
@@ -90,16 +92,18 @@ body::before {
     /* This section is for the animated color block */
     display: grid;
     place-items: center; /* Controls the gradient square position */
-    background: #080808;
-    margin-top: 8rem;
+    background: ;
+    margin-top: 4rem; /* height relative to top frame */
+    margin-bottom: 2rem;
     margin-left: -3.5rem; /* -2 centers and -30 aligns left to where i wanted it originally */
 
 }
-
+/* Inside the Hero Card */
 .hero-background .author .card .card2{
     width: 400px;
     height: 180px; 
     background: black;
+    color: #f4effa;;
     position: relative;
     display: grid;
     place-content: center;
@@ -111,13 +115,13 @@ body::before {
 
 .hero-background .author .card .card2 h1{
     z-index: 1;
-    color: white;
+    color: ;
     font-size: 3em;
 }
 
 .hero-background .author .card .card2 p{
     z-index: 1;
-    color: white;
+    color:;
     font-size: 2em;
 }
 
@@ -125,9 +129,9 @@ body::before {
     content:'';
     position: absolute;
     width: 100px;
-    background-image: linear-gradient(180deg, rgb(2, 56, 251), rgb(220, 220, 220));
+    background-image: linear-gradient(180deg, #951d46, #0fa3b1);
     height: 250%;
-    animation: rotBGimg 3s linear infinite;
+    animation: rotBGimg 4.5s linear infinite;
     transition: all 0.2s linear;
 }
 
@@ -143,13 +147,29 @@ body::before {
 .hero-background .author .card::after{
     conent: "";
     position: absolute;
-    background: black;
+    background: #64861b;
     inset: 5px;
     border-radius: 15px;
 }
 
+.logo{
+    width: 400px;
+    height: auto;
+}
 
+.quote {
+    color: #f4effa;
+    margin: 1rem; 
+}
 
+.intro-paragraph {
+    grid-column: 1 / -1; /* spans all columns */
+    width: 100%;
+    color: #f4effa;
+    margin-left: 4rem;
+  }
+
+/* Project Portfolio Title */
 .main_title h1{
     margin: 20px;
     text-align: center;
@@ -157,7 +177,7 @@ body::before {
     font-size: 5em;
     line-height: 1em;
     position: relative;
-    color: #f9f7fb;
+    color: #f4effa;
 }
 
 .banner{
@@ -176,11 +196,61 @@ body::before {
     left: calc(50% - 100px);
     transform-style: preserve-3d;
     transform: perspective(1000px);
-    /* Animating the Item Slider */
-    animation: autoRun 30s linear infinite;
+    /* Animating the Data Web Project Slider */
+    animation: autoRun 65s linear infinite;
     z-index: 2; /* To overlap my photo # has to be greater*/
     
 }
+
+.scroller{
+    max-width: 100%;
+    color: rgb(255, 255, 255);
+    background: #0fa3b1;
+}
+
+.scroller[data-animated=true]{
+    overflow: hidden;
+    -webkit-mask: linear-gradient(
+        90deg, 
+        transparent, 
+        white 20%,
+        white 80%,
+        transparent
+    );
+    mask: linear-gradient(
+        90deg, 
+        transparent, 
+        white 20%,
+        white 80%,
+        transparent
+    );
+}
+
+.scroller[data-animated=true] .scroller_inner {
+    flex-wrap: nowrap;
+    animation: scroll 45s linear infinite;
+}
+
+
+
+.scroller_inner{
+    padding-block: 1rem;
+    
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    list-style-type: none;
+}
+
+/* Animation for Skill's Scroller */
+@keyframes scroll {
+    to {
+        transform: translate(100%); /* using -100% movies the opposite direction */
+    }
+
+}
+
+
 
 /* Animation of the Item Slider 
 rotateX() moves item for particular view, while
@@ -239,7 +309,7 @@ Basically rotateY of item at position:
     font-size: 10em;
     line-height: 1em;
     position: relative;
-    color: #ebe6e6;
+    color: #f4effa;
 }
 
 .banner .content h1::after{
@@ -267,11 +337,12 @@ Basically rotateY of item at position:
     z-index: 2;
 }
 
+/* Analytics and Development Subtitle */
 .banner .content .project-details{
     font-family: 'lexipa', sans-serif;
     /*text-align: left;*/
     max-width: 300px;
-    color: #ebe6e6;
+    color: #f4effa;;
     margin-right: 160px;
                                                 
 }
