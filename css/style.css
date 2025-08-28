@@ -30,6 +30,10 @@ body {
             #25283b22 100px 101px
         );*/
     background: linear-gradient(90deg,#30012e,#08022c);
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
     /*background-color: #052a47;*/
 }
 /*
@@ -51,37 +55,34 @@ body::before {
 }*/
 
 .hero-background {
-    display: grid;
-    place-items: center; /* centers both vertically and horizontally */
-    /*height: 100vh;*/
-    /*background-image: url(/assets/night-4489561_1920.jpg);*/
+    display: ;
+    place-items: center; /* centers hero card both vertically and horizontally*/
+    width: 100%;
     background-color: black;
     background-size: cover;
-    background-position: center;
-    /*min-height: 100vh; <-- Space below paragraph*/ 
+    min-height: 100vh; /*<-- Space below paragraph 
     /*margin-bottom: 10px; /* margin space between scrolling skills and this section */
+    background-position: center;
 }
 
-.hero-background .author{
-    font-family: 'NOVA STAMP', sans-serif;
+.hero-background .author {
+    font-family: "Architects Daughter", cursive;
+    font-weight: 400;
     text-align: center;
     max-width: 300px;
-    color: #f4effa;; /* color inside hero card */
+    color: #f4effa; /* color inside hero card */
     display: grid;
     place-items: center;
+    /* ProfilePhotoCircle next to Logo in card*/
+    gap: 3rem; /* between logo card and photo */
     width: 100%;
     height: 100%;
-                                                
+    font-style: normal;
 }
 
-.hero-background .author{
-    display: flex;
-    flex-direction: column; /* Stack children vertically */
-    align-items: flex-start; /* Aligns text to the left */
-    gap: 0.5rem;
-}
+
 /* Outer Hero Card where lights move */
-.hero-background .author .card{
+.hero-background .author .card {
     width: 410px; /* 254*/
     height: 190px; /*190*/
     position: relative;
@@ -92,14 +93,13 @@ body::before {
     /* This section is for the animated color block */
     display: grid;
     place-items: center; /* Controls the gradient square position */
-    background: ;
-    margin-top: 4rem; /* height relative to top frame */
+    margin-top: 3rem; /* height relative to top frame */
     margin-bottom: 2rem;
-    margin-left: -3.5rem; /* -2 centers and -30 aligns left to where i wanted it originally */
+    margin-left: -2rem; /* -2 centers and -30 aligns left to where i wanted it originally. -3.5 aligns only the logo card in center */
 
 }
 /* Inside the Hero Card */
-.hero-background .author .card .card2{
+.hero-background .author .card .card2 {
     width: 400px;
     height: 180px; 
     background: black;
@@ -107,7 +107,7 @@ body::before {
     position: relative;
     display: grid;
     place-content: center;
-    place-items: center;
+    place-items: ;
     overflow: hidden;
     border-radius: 20px;
 
@@ -145,7 +145,7 @@ body::before {
 }
 
 .hero-background .author .card::after{
-    conent: "";
+    content:;
     position: absolute;
     background: #64861b;
     inset: 5px;
@@ -153,31 +153,88 @@ body::before {
 }
 
 .logo{
-    width: 400px;
+    max-width: 350px; /* Logo size within card2 */
+    width: 100%;
     height: auto;
 }
 
-.quote {
-    color: #f4effa;
-    margin: 1rem; 
+.profilephoto {
+    width: 15rem;
+    margin-top: 1em;
+    border-radius: 50%; /* keep circular */
 }
 
+.paragraph-image {
+    display: flex;
+    flex-direction: column; /* stack elements vertically */
+    align-items: flex-start; 
+}
+
+.quote {
+    color: #f4effa; 
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 1.2em;
+    margin: 30px;
+}
+
+.quoteauthor {
+    text-align: right;
+    margin-top: 10px;
+}
+
+/* The purple edge error is somewhere here */
 .intro-paragraph {
-    grid-column: 1 / -1; /* spans all columns */
-    width: 100%;
-    color: #f4effa;
-    margin-left: 4rem;
+  display: grid;
+  grid-template-columns: 2fr 2fr; /* text takes 2/3, image takes 1/3 */
+  align-items: center;
+  /*width: 100%; <-- this line was causing the error/ overflow */ 
+  color: #f4effa;
+  /*margin-left: 21rem; /* smaller horizontal margin for responsiveness */
+  margin: 35px;
+  padding-bottom: 1rem;
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.2em;
+  gap: 4rem; /* space between text and image */
+}
+
+.intro-paragraph img {
+  width: 100%; /* image fills its grid column */
+  max-width: 300px; /* optional max size */
+  height: auto; /* maintains aspect ratio */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .intro-paragraph {
+    grid-template-columns: 1fr; /* stacking the text and image vertically */
+    text-align: center;
   }
+
+  .intro-paragraph img {
+    margin: 1rem auto 0 auto; /* center image */
+  }
+}
+
 
 /* Project Portfolio Title */
 .main_title h1{
     margin: 20px;
+    padding-top: 1em;
     text-align: center;
-    font-family: 'pic0', sans-serif;
+    font-family: "Architects Daughter", cursive;
+    font-weight: 400;
+    font-style: normal;
     font-size: 5em;
     line-height: 1em;
     position: relative;
     color: #f4effa;
+
 }
 
 .banner{
@@ -206,6 +263,11 @@ body::before {
     max-width: 100%;
     color: rgb(255, 255, 255);
     background: #0fa3b1;
+    font-family: "Jost", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 25px;
 }
 
 .scroller[data-animated=true]{
@@ -227,15 +289,15 @@ body::before {
 }
 
 .scroller[data-animated=true] .scroller_inner {
+    width: max-content;
     flex-wrap: nowrap;
-    animation: scroll 45s linear infinite;
+    animation: scroll 85s linear infinite;
 }
 
 
 
 .scroller_inner{
-    padding-block: 1rem;
-    
+    padding-block: 0.5rem;
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
@@ -245,7 +307,7 @@ body::before {
 /* Animation for Skill's Scroller */
 @keyframes scroll {
     to {
-        transform: translate(100%); /* using -100% movies the opposite direction */
+        transform: translate(calc(-50% - 0.5rem)); /* using -n% movies the opposite direction */
     }
 
 }
@@ -325,13 +387,13 @@ Basically rotateY of item at position:
 }
 
 .banner .content .myphoto{
-    background-image: url(/assets/LMVS_Tranps2a.png);
+    background-image: url(/assets/MV_Aug2025a_transp_PNG_biggerImage_small2b.png);
     width: 100%;
-    height: 75vh; /* 75 is right angle for optical effect*/
+    height: 68vh; /* 75vh is right angle for optical effect 1st photo 68vh is for the Summer 2025 photo*/
     position: absolute;
     bottom: 0;
     left: 0;
-    background-size: auto 130%;
+    background-size: auto 100%;
     background-repeat: no-repeat;
     background-position: top center;
     z-index: 2;
@@ -339,7 +401,7 @@ Basically rotateY of item at position:
 
 /* Analytics and Development Subtitle */
 .banner .content .project-details{
-    font-family: 'lexipa', sans-serif;
+    font-family: "Architects Daughter", cursive;
     /*text-align: left;*/
     max-width: 300px;
     color: #f4effa;;
