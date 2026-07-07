@@ -379,7 +379,21 @@ body::before {
     color: #f4effa;
 
 }
+.main_title h2 {
+    margin-top: -10px;
+    text-align: center;
+    font-family: "Architects Daughter", cursive;
+    font-weight: 400;
+    font-size: 2em;
+    color: #f4effa;
+    position: relative;
+}
 
+.main_title h2::after {
+    content: attr(data-content);
+    position: absolute;
+    inset: 0;
+}
 .banner{
     width: 100%;
     height: 100vh;
