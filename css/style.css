@@ -166,8 +166,8 @@ body::before {
 
 .paragraph-image {
     display: flex;
-    flex-direction: column; /* stack elements vertically */
-    align-items: flex-start; 
+    flex-direction: column;
+    align-items: center;
 }
 
 .quote {
@@ -188,17 +188,19 @@ body::before {
 /* The purple edge error is somewhere here */
 .intro-paragraph {
   display: grid;
-  grid-template-columns: 2fr 2fr; /* text takes 2/3, image takes 1/3 */
+  grid-template-columns: 2fr 1fr; /* Had 2fr and 2fr//text takes 2/3, image takes 1/3 */
   align-items: center;
+  justify-content: center; /* added this part for the intro paragraph centered */
+  max-width: 1000px; /*new addition */
+  margin: 35px auto; /*new addition/ auto */
   /*width: 100%; <-- this line was causing the error/ overflow */ 
   color: #f4effa;
   /*margin-left: 21rem; /* smaller horizontal margin for responsiveness */
-  margin: 35px;
   padding-bottom: 1rem;
   font-family: "Quicksand", sans-serif;
-  font-optical-sizing: auto;
+  /*font-optical-sizing: auto;*/
   font-weight: 400;
-  font-style: normal;
+  /*font-style: normal;*/
   font-size: 1.2em;
   gap: 4rem; /* space between text and image */
 }
