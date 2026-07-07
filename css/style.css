@@ -390,7 +390,7 @@ body::before {
 }
 
 .main_title h2::after {
-    content: attr(data-content);
+    conent: attr(data-content);
     position: absolute;
     inset: 0;
 }
