@@ -520,7 +520,7 @@ Basically rotateY of item at position:
 .banner .content h1::after{
     position:absolute;
     inset: 0 0 0 0;
-    content: attr(data-content);
+    conent: attr(data-content);
     z-index: 3; /* This number is relevant to the z-index of the .model for overlapping. Must be+1 of the z-index from the .model*/
 
 }
